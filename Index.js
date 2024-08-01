@@ -2,11 +2,10 @@ const { Telegraf } = require('telegraf');
 const axios = require('axios');
 require('dotenv').config();
 
-// Ambil token bot dari variabel lingkungan
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const webhookUrl = process.env.WEBHOOK_URL;
 
-// Set up webhook
+// Function to set webhook
 const setWebhook = async () => {
     try {
         const response = await axios.post(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/setWebhook`, {
